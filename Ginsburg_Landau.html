@@ -1,0 +1,948 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Ginsburg Landau theory &#8212; Statistical Mechanics (II)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ginsburg_Landau';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Epilogue" href="biblio.html" />
+    <link rel="prev" title="Syllabus for Statistical Mechanics (II) – PHYS522000" href="syllabus.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="syllabus.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="syllabus.html">
+                    Syllabus for Statistical Mechanics (II) – PHYS522000
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Ginsburg Landau theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FGinsburg_Landau.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Ginsburg_Landau.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Ginsburg Landau theory</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-phases-and-phase-transitions">Motivation – Phases and phase transitions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-field-theory-for-ising-model">Mean-field theory for Ising model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-landau-free-energy">The “Landau free energy”</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-of-order-parameter">Concept of order parameter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-little-bit-of-reverse-engineering">A little bit of reverse engineering…</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-postulates">The postulates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phenomenological-landau-theory-for-the-ising-model">Phenomenological Landau theory for the Ising model</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-the-landau-free-energy">Constructing the Landau free energy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-critical-exponents">The critical exponents</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-of-higher-order-terms">Effects of higher order terms</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-landau-free-energy-with-inhomogeneous-order-parameter-field">The Landau free energy with inhomogeneous order parameter field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-functional-integral-representation-of-landau-theory">The functional integral representation of Landau theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coarse-graining">Coarse graining</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-functional-integral-form-of-the-landau-free-energy-and-functional-derivatives">The functional integral form of the Landau free energy and functional derivatives</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="the-ginsburg-landau-theory">
+<h1>The Ginsburg Landau theory<a class="headerlink" href="#the-ginsburg-landau-theory" title="Permalink to this headline">#</a></h1>
+<p>We will introduce the Ginsburg Landau theory which is a theory that describes the definition of phases and the transitions between them. The theory heavily relies on the principle of symmetry which will become more clear as we introduce the postulates and the structure of the theory. Before everything, let’s understand what is the problem and what kind of tools we have at hands.</p>
+<div class="section" id="motivation-phases-and-phase-transitions">
+<h2>Motivation – Phases and phase transitions<a class="headerlink" href="#motivation-phases-and-phase-transitions" title="Permalink to this headline">#</a></h2>
+<p>Phases characterizes the pattern of collective behavior of a many-body system. When the pattern changes, we have a phase transition. In the equilibrium statistical mechanics, we learned that phases and phase transitions could be understood by the partition function. The key to have a well-defined notion of phase transition is to study the question at the thermodynamic limit where we could have non-analytic behavior from the combination of infinite many analytic functions.</p>
+<p>The partition function for a system can be formally expressed as</p>
+<div class="math notranslate nohighlight">
+\[
+Z(N,\beta)=\sum_{c\in \mathcal{C}} e^{-\beta E(c)}\text{.}
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(N\)</span> is the number of degrees of freedom, <span class="math notranslate nohighlight">\(\beta=(k_B T)^{-1}\)</span>, <span class="math notranslate nohighlight">\(c\)</span> represent an arbitrary configuration of the system in the configuration space <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> and <span class="math notranslate nohighlight">\(E(c)\)</span> is the energy of the corresponding configuration <span class="math notranslate nohighlight">\(c\)</span>.</p>
+<p>With the partition function defined, the probability of the configuration <span class="math notranslate nohighlight">\(c\)</span> can be expressed as</p>
+<div class="math notranslate nohighlight">
+\[
+P(c)=\frac{1}{Z}e^{-\beta E(c)}; \sum_{c\in\mathcal{C}} P(c)=1\text{(The normalization condition).}
+\]</div>
+<p>The partition function is related to the free energy by a simple change of variable.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Z(N,\beta)&amp;=\sum_{c\in \mathcal{C}} e^{-\beta E(c)}=\sum_{E}\sum_{c\in \mathcal{C}}\delta_{E,E(c)} e^{-\beta E(c)}\\
+&amp;=\sum_{E} \underbrace{w(E)}_{\text{number of configurations at the specific energy } E} e^{-\beta E(c)}\\
+&amp;=\sum_E e^{-\beta E+\ln[w(E)]}=e^{-\beta F(N,\beta)}\text{.}
+\end{split}\]</div>
+<p>The competition between energetics and the entropy can be observed clearly by taking derivative with respect to <span class="math notranslate nohighlight">\(\beta\)</span> to the normalization condition above.</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{c\in\mathcal{C}} e^{\beta[F(N,\beta)-E(c)]}\left\{ \left[F(N,\beta)-E(c)\right]+\beta\left(\frac{\partial F}{\partial \beta}\right)_N\right\}=0
+\]</div>
+<p>The above equality leads to</p>
+<div class="math notranslate nohighlight">
+\[
+F(N,\beta)=\sum_{c\in\mathcal{C}}P(c)E(c)-\beta\sum_{c\in\mathcal{C}}P(c)\left(\frac{\partial F}{\partial \beta}\right)_N=\langle H\rangle -T \langle \left(-\partial_T F\right)_N\rangle\text{.}
+\]</div>
+<p>Adjusting temperature changes the weighting of <span class="math notranslate nohighlight">\(\langle H\rangle\)</span> and <span class="math notranslate nohighlight">\(T \langle \left(-\partial_T F\right)_N\rangle\)</span>.  At low temperature limit, the first term dominates. At the high temperature limit, the latter dominates.</p>
+<div class="section" id="mean-field-theory-for-ising-model">
+<h3>Mean-field theory for Ising model<a class="headerlink" href="#mean-field-theory-for-ising-model" title="Permalink to this headline">#</a></h3>
+<p>To have a more specific picture about the above abstract idea. Let’s take the simplest non-trivial model for the study of phases– the ferromagnetic Ising model.</p>
+<p>The model is defined by interacting binary variables <span class="math notranslate nohighlight">\(\sigma_i=\{+1,-1\}\)</span> on lattice site <span class="math notranslate nohighlight">\(i\)</span>. The Hamiltonian for the system <span class="math notranslate nohighlight">\(\Omega\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+H_{\Omega}=-J\sum_{\langle i,j\rangle} \sigma_i\sigma_j, J&gt;0\text{.}
+\]</div>
+<p>Here, the binary variables prefer to have the same sign as dictated by the energy scale <span class="math notranslate nohighlight">\(J\)</span>.</p>
+<p>The system has the global Ising symmetry, <span class="math notranslate nohighlight">\(\sigma_i\to-\sigma_i\)</span>, which keep the Hamiltonian invariant. There are other symmetries such as the lattice symmetry which we will see does not play an important role for the discussion of the phase transition.</p>
+<p>The probability of a spin configuration <span class="math notranslate nohighlight">\(P(c=\{\sigma_1,\sigma_2,\cdots,\sigma_N\})\)</span> factorizes under the mean-field theory assumption. <em>i.e.</em> <span class="math notranslate nohighlight">\(P(c=\{\sigma_1,\sigma_2,\cdots,\sigma_N\})\xrightarrow{MFT} \prod_{i=1}^N P_{MFT}(\sigma_i)\)</span>. The corresponding probability <span class="math notranslate nohighlight">\(P_{MFT}(\sigma_i)\)</span> is then determined in a self-consistent fashion.</p>
+<p>The formal procedure is to replace the spin spin coupling using the expectation value that is determined by <span class="math notranslate nohighlight">\(P_{MFT}(\sigma_i)\)</span>. The replacement is valid when we assume the fluctuation <span class="math notranslate nohighlight">\(\delta \sigma \equiv \sigma_i-\langle \sigma_i\rangle_{MFT}\)</span> is small and we only include terms up to <span class="math notranslate nohighlight">\(\mathcal{O}(\delta \sigma)\)</span>. The replacement</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_i\sigma_j\to \langle \sigma_i \rangle_{MFT} \sigma_j+\sigma_i\langle \sigma_j\rangle_{MFT}-\langle \sigma_i\rangle_{MFT}\langle \sigma_j\rangle_{MFT}
+\]</div>
+<p>effectively reduce the problem into a single particle problem with an effective magnetic field, <span class="math notranslate nohighlight">\(h_{eff,i}=\sum_{j\neq i} J_{ij}\langle \sigma_j\rangle_{MFT}\)</span>, applied on a single spin. For those who are not familiar with the mean-field theory approach, please check the lecture note of statistical mechanics (I).</p>
+<p>We can stand back and ask what is the key assumption in the mean-field theory? It turns out the assumption that <span class="math notranslate nohighlight">\(\delta \sigma\approx0\)</span> is the key for the mean-field theory to work. If the statement is true, then we can drop the fluctuation. This situation happened when the system is deep in a specific phase. On the other hand, when the system is near the transition, the fluctuation is not small, then the approach will be problematic. We will revisit this issue later. For now, let’s pretend the mean-field theory is valid for all temperature range and move on to do the corresponding calculation.</p>
+<p>The key equation for us to solve is the self-consistency equation. At this step, I will put back the coupling with the external magnetic field, <span class="math notranslate nohighlight">\(h\)</span>, to remind ourselves about how to use the mean-field theory to calculate the critical exponents. The self-consistency equation is</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \sigma_i\rangle_{MFT}=m=\tanh\left[ \beta (h+m k_B T_c)\right]; T_c=\frac{2dJ}{k_B}\text{.}
+\]</div>
+<p>Once <span class="math notranslate nohighlight">\(m\)</span> is determined, we can construct the effective magnetic field and recover <span class="math notranslate nohighlight">\(P_{MFT}(\sigma_i)\)</span>. With these information, we can calculate the critical exponents by expanding the self-consistency equation near the critical temperature. Can we generalize this process? If yes, what can we learn from the generalization scheme?</p>
+</div>
+</div>
+<div class="section" id="the-landau-free-energy">
+<h2>The “Landau free energy”<a class="headerlink" href="#the-landau-free-energy" title="Permalink to this headline">#</a></h2>
+<div class="section" id="concept-of-order-parameter">
+<h3>Concept of order parameter<a class="headerlink" href="#concept-of-order-parameter" title="Permalink to this headline">#</a></h3>
+<p>One can immediate notice that <span class="math notranslate nohighlight">\(\langle \sigma_i\rangle_{MFT}\)</span> plays an important role in the above approach. It is actually the parameter that specifies the corresponding order. When <span class="math notranslate nohighlight">\(\langle \sigma_i\rangle_{MFT}\neq0\)</span>, it specifies the system is ordered. However, the quantity is defined within the mean-field theory. Why not promoting this idea to a more general setting beyond the mean-field theory. After all, the mean-field theory is just a theory for us to approximate the <span class="math notranslate nohighlight">\(P(\{\sigma_1,\sigma_2,\cdots,\sigma_N\})\)</span>.</p>
+<p>We can take the idea and define an observable <span class="math notranslate nohighlight">\(\mathcal{O}\)</span>. When <span class="math notranslate nohighlight">\(\langle \mathcal{O}\rangle \neq0\)</span>, the probability distribution develop some kind of collective pattern that is specified by <span class="math notranslate nohighlight">\(\langle \mathcal{O}\rangle\)</span>, so we call it the <em>order parameter</em>. The order parameter can be a scalar, a vector, a tensor or even a function. We will focus on the simple case for now. For the Ising model, it is just the magnitude of <span class="math notranslate nohighlight">\(m\)</span>.</p>
+</div>
+<div class="section" id="a-little-bit-of-reverse-engineering">
+<h3>A little bit of reverse engineering…<a class="headerlink" href="#a-little-bit-of-reverse-engineering" title="Permalink to this headline">#</a></h3>
+<p>Now we know the idea of the mean-field theory and the order parameter. For different problems, we will need to run the same machinery again and again. Can we find the common features between those mean-field theories? The key equation seems to be the self-consistency equation. Can we make some physical arguments and directly get the essential information of the self-consistency equation?</p>
+<p>Let’s first define what do we mean by the essential information. In the study of critical phenomena, we basically look for the so-called critical exponents. When the temperature is near the critical temperature, the order parameter will be small and we might expand the self-consistency equation and solve them approximately. In the case of Ising model, we essentially can do the analysis by sending <span class="math notranslate nohighlight">\(T\to T_c\)</span> and <span class="math notranslate nohighlight">\(m\approx0\)</span> at small external field <span class="math notranslate nohighlight">\(h\)</span>. The self-consistency equation becomes</p>
+<div class="math notranslate nohighlight" id="equation-critical-equation">
+<span class="eqno">(1)<a class="headerlink" href="#equation-critical-equation" title="Permalink to this equation">#</a></span>\[\begin{split}
+\frac{h}{k_B T}\approx (1-\tau)m+\left[\tau-\tau^2+\frac{\tau^3}{3}\right]m^3+\cdots\\
+\text{or equivalently}\\
+(1-\tau)m+\left[\tau-\tau^2+\frac{\tau^3}{3}\right]m^3-\frac{h}{k_B T}\approx
+\end{split}\]</div>
+<p>here, <span class="math notranslate nohighlight">\(\tau=\frac{T_c}{T}\)</span> and we can get all the critical exponents starting from this equation.</p>
+<p>So the question is: can we define some kind of concept that is similar to the free energy in thermodynamics and minimize it to get the above self-consistency equation near the critical temperature? If we can do that, that concept will be useful. Then we can go back and ask how to justify this seemly <em>ad hoc</em> free energy on a physical ground.</p>
+<p>Let’s just try to do the exercise for our Ising model problem with equation <a class="reference internal" href="#equation-critical-equation">(1)</a>. If we define some kind of “free energy” <span class="math notranslate nohighlight">\(\Gamma(T,J,h,m)\)</span>. We can always devide it into parts that are independent of <span class="math notranslate nohighlight">\(m\)</span> completely and parts that depends on <span class="math notranslate nohighlight">\(m\)</span> implicitly. We would like to have the part that has implcit dependence on <span class="math notranslate nohighlight">\(m\)</span> provides the minimization equation which is equivalent to <a class="reference internal" href="#equation-critical-equation">(1)</a>. The following construction will work.</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma(T,J,h,m)\equiv \Gamma_0(T,J,h)+\underbrace{U[\Gamma_0(T,J,h)]}_{\text{To make sure the expression has the right unit.}}\int dm K(T,J,h,m)\text{.}
+\]</div>
+<p>The minimization condition is</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \Gamma}{\partial m}=0=(1-\tau)m+\left[\tau-\tau^2+\frac{\tau^3}{3}\right]m^3-\frac{h}{k_B T}\text{.}
+\]</div>
+<p>So we can see the idea is very tempting! It is indeed possible at least formally. If we perform the last integral, we can see</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma(T,J,h,m)\equiv \Gamma_0(T,J,h)+U[\Gamma_0(T,J,h)]\left\{(1-\tau)\frac{m^2}{2}+\left[\tau-\tau^2+\frac{\tau^3}{3}\right]\frac{m^4}{4}-\frac{h}{k_BT}m\right\}\text{.}
+\]</div>
+<p>All the important information is hidden in the last term. The question is: can we have a theoretical argument to construct it directly? It turns out, it is the Landau theory.</p>
+</div>
+<div class="section" id="the-postulates">
+<h3>The postulates<a class="headerlink" href="#the-postulates" title="Permalink to this headline">#</a></h3>
+<p>Here we discuss the postulates for the Landau theory. The key step toward the physical argument of the Landau theory is to identify the transformation property of the order parameter under the symmetry of the system. We will discuss the postulates first and apply it to the Ising model and see what we can learn during the procedure.</p>
+<ol class="arabic">
+<li><p>We can construct the Landau free energy, <span class="math notranslate nohighlight">\(L\)</span>, as</p>
+<div class="math notranslate nohighlight">
+\[
+   L\left[\left\{K_i\right\},\eta\right]
+   \]</div>
+<p>with the order parameter <span class="math notranslate nohighlight">\(\eta\)</span> and couplings <span class="math notranslate nohighlight">\(\{K_i\}\)</span>.</p>
+</li>
+<li><p>How to construct <span class="math notranslate nohighlight">\(L\)</span>?</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\eta\)</span> transforms under the symmetry of the system.</p></li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span> is invariant under the symmetry transformation.</p></li>
+</ol>
+<p>Taking the Ising model as an example, the order parameter <span class="math notranslate nohighlight">\(\eta=\langle \sigma_i\rangle\xrightarrow{\text{Ising symmetry}}-\eta\)</span>. As the temperature is below the critical temperature, <span class="math notranslate nohighlight">\(\eta\neq0\)</span>. The symmetry is spontaneously broken. When the temperature is above the critical temperature <span class="math notranslate nohighlight">\(\eta=0\)</span> the symmetry is preserved.</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span> is analytic in <span class="math notranslate nohighlight">\(\eta\)</span> around <span class="math notranslate nohighlight">\(\eta=0\)</span>. We will see that it is convenient to discuss the density of <span class="math notranslate nohighlight">\(L\)</span> defined as</p>
+<div class="math notranslate nohighlight">
+\[
+   \mathcal{L}=\frac{L}{V}=\sum_{p=0}^{\infty}a_p(\{K_i\})\eta^p\text{ when } \eta\approx0\text{.}
+   \]</div>
+</li>
+<li><p>For inhomogeneous system, we require <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> to be a local function of <span class="math notranslate nohighlight">\(\eta(\textbf{r})\)</span> and <span class="math notranslate nohighlight">\(\nabla^q \eta(\textbf{r})\)</span> with <span class="math notranslate nohighlight">\(q\)</span> finite.</p></li>
+<li><p>When <span class="math notranslate nohighlight">\(T&gt;T_c\)</span>, the solution of the minimization equation of <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> is <span class="math notranslate nohighlight">\(\eta=0\)</span>. When <span class="math notranslate nohighlight">\(T&lt;T_c\)</span>, the solution is <span class="math notranslate nohighlight">\(\eta\neq0\)</span>.</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Beyond Landau?</p>
+<p>An interesting question to ask is: How to go beyond Landau’s phenomenlogical theory? Before we claim something is beyond Landau’s paradigm, we should learn what is Landau theory. Now we know what is the spirit and the assumptions of Landau theory. There are several ways that people found that is not included in Landau’s paradigm.</p>
+<ol class="arabic simple">
+<li><p>Non-equilibrium physics: Once we are not in equlibrium, the fundation of free energy like concept is questionalble. In this sense, it is a trivial case that is beyond Landau’s paradigm.</p></li>
+<li><p>Equilibrium physics: If we are discussing equilibrium phases, it is more challenging to find other general mechanism beyond Landau’s approach. I will mention two of them, which is related to the <a class="reference external" href="https://www.nobelprize.org/uploads/2018/06/advanced-physicsprize2016-1.pdf">2016 Nobel prize in Physics</a>。The key question is related to the concept of order parameter. The conventional order parameter contains only local information. Are there collective pattern that is invisible to local information, but requires global informaiton of the system to identify the collective pattern?</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="phenomenological-landau-theory-for-the-ising-model">
+<h3>Phenomenological Landau theory for the Ising model<a class="headerlink" href="#phenomenological-landau-theory-for-the-ising-model" title="Permalink to this headline">#</a></h3>
+<p>Let’s try to construct the phenomenological Landau theory for the Ising model.</p>
+<div class="math notranslate nohighlight">
+\[
+H=-J\sum_{\langle i,j\rangle}S_iS_j; J&gt;0\text{.}
+\]</div>
+<p>The important object is the order parameter. In this case, the symmetry of the Hamiltonian is the Ising symmetry <span class="math notranslate nohighlight">\(S_i\to-S_i\)</span>. The simplest observable that breaks the symmetry is <span class="math notranslate nohighlight">\(\langle S_i\rangle\equiv \eta\)</span>. We will use it to be the order parameter and construct the corresponding Landau free energy.</p>
+<div class="section" id="constructing-the-landau-free-energy">
+<h4>Constructing the Landau free energy<a class="headerlink" href="#constructing-the-landau-free-energy" title="Permalink to this headline">#</a></h4>
+<p>We start our process by considering the homogeneous case where <span class="math notranslate nohighlight">\(\eta(\textbf{r})=\eta\)</span> and <span class="math notranslate nohighlight">\(\nabla \eta(\textbf{r})=0\)</span>. From the postulate 3 we know</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L}=a_0(J,T)+a_1(J,T)\eta+a_2(J,T)\eta^2+a_3(J,T)\eta^3+a_4(J,T)\eta^4+\cdots
+\]</div>
+<p>From postulate 2, the Ising symmetry requires <span class="math notranslate nohighlight">\(\mathcal{L}(\eta)=\mathcal{L}(-\eta)\)</span>. Therefore, we only keep the even power terms.</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L}=a_0(J,T)+a_2(J,T)\eta^2+a_4(J,T)\eta^4+\cdots
+\]</div>
+<p>To avoid the cluttering notation, we will supress the <span class="math notranslate nohighlight">\((J,T)\)</span> dependence. But we should keep in mind that those coeficients all depends on <span class="math notranslate nohighlight">\(J\)</span> and <span class="math notranslate nohighlight">\(T\)</span> implicitly.</p>
+<p>We will use postulate 5 to determine the behavior of the phenomenological constants across the critical temperature <span class="math notranslate nohighlight">\(T_c\)</span>. We first notice the minimization condition of the Landau free energy has two solutions</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \mathcal{L}}{\partial \eta}=2a_2\eta+4a_4\eta^3=0
+\]</div>
+<p>with two solutions</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\eta=
+\left\{
+\begin{array}{c}
+0\\
+\pm \sqrt{-\frac{a_2}{2a_4}}\equiv \pm \eta_{SB}
+\end{array}
+\right.
+\text{.}
+\end{split}\]</div>
+<p>Our goal is to have <span class="math notranslate nohighlight">\(\eta=0\)</span> to be the stable solution for the Landau free energy when <span class="math notranslate nohighlight">\(T&gt;T_c\)</span> and <span class="math notranslate nohighlight">\(\eta=\pm\eta_{SB}\)</span> when <span class="math notranslate nohighlight">\(T&lt;T_c\)</span>. How to achieve our goal? We can make the following observation, the functional form of the Landau free energy is essentially a quadratic equation in disguise. That is, we can rewrite the free energy in the form of <span class="math notranslate nohighlight">\(A_1(\eta^2+A_2)^2\)</span>. To have a well defined minimum, we need to have <span class="math notranslate nohighlight">\(A_1&gt;0\)</span>. If <span class="math notranslate nohighlight">\(A_2&gt;0\)</span>, the free energy is minimized when <span class="math notranslate nohighlight">\(\eta^2=\eta=0\)</span>. If <span class="math notranslate nohighlight">\(A_2&lt;0\)</span>, the free energy is minimized when <span class="math notranslate nohighlight">\(\eta^2=-A_2&gt;0\)</span>. Therefore, we can reverse engineer the properties we want. That is, we require <span class="math notranslate nohighlight">\(a_4(J,T)&gt;0\)</span> and <span class="math notranslate nohighlight">\(a_2(J,T)\)</span> to change sign accordingly at <span class="math notranslate nohighlight">\(T=T_c\)</span>! With these information, we could find the leading order behavior of <span class="math notranslate nohighlight">\(a_0(J,T),a_2(J,T)\)</span> and <span class="math notranslate nohighlight">\(a_4(J,T)\)</span> in temperature.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+a_0(J,T)&amp;\simeq a_0(J)+\cdots\\
+a_2(J,T)&amp;\simeq a\left(\frac{T-T_c}{T_c}\right)+\cdots\equiv at+\cdots\\
+a_4(J,T)&amp;\simeq \frac{b}{2}+\cdots\text{ with $b&gt;0$.}
+\end{split}\]</div>
+<p>The <span class="math notranslate nohighlight">\(a_0(J)\)</span> term is not going to play an essential role, so we drop it in later discussion. When we include coupling with external field, the Landau free energy should have the form</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L}=at\eta^2+\frac{b}{2}\eta^4-h\eta\text{.}
+\]</div>
+<p>The schematic behavior of the Landau free energy is ploted in <a class="reference internal" href="#landau-free-energy-ising"><span class="std std-numref">Fig. 1</span></a>.</p>
+<div class="figure align-default" id="landau-free-energy-ising">
+<a class="reference internal image-reference" href="images/Landau_free_energy_simple.pdf"><img alt="images/Landau_free_energy_simple.pdf" src="images/Landau_free_energy_simple.pdf" style="width: 950px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Schematic behavior of the Landau free energy for Ising model.</span><a class="headerlink" href="#landau-free-energy-ising" title="Permalink to this image">#</a></p>
+</div>
+<p>When <span class="math notranslate nohighlight">\(h=0\)</span>, the system has the Ising symmetry and the symmetry is spontaneously broken at the continuous phase transition point.
+When <span class="math notranslate nohighlight">\(t&lt;0\)</span> and we tune the external field from postive value to negative value, we have a jump of the order parameter at <span class="math notranslate nohighlight">\(h=0\)</span>. We have a discontinuous phase transition at <span class="math notranslate nohighlight">\(h=0\)</span>.</p>
+</div>
+<div class="section" id="the-critical-exponents">
+<h4>The critical exponents<a class="headerlink" href="#the-critical-exponents" title="Permalink to this headline">#</a></h4>
+<p>For the corresponding Landau free energy, we can easily derive</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\eta(t)=
+\left\{
+\begin{array}{cc}
+\sqrt{\frac{-at}{b}}\propto t^{\beta}; \beta=\frac{1}{2} &amp;\text{when $t&lt;0$,h=0}\\
+0 &amp;\text{when $t&gt;0$,h=0}
+\end{array}
+\right.
+\text{.}
+\end{split}\]</div>
+<p>Using this informaiton, we can derive <span class="math notranslate nohighlight">\(\mathcal{L}(\eta=0)\)</span> and <span class="math notranslate nohighlight">\(\mathcal{L}{\eta=\sqrt{\frac{-at}{b}}}\)</span> and calculate the corresponding specific heat near <span class="math notranslate nohighlight">\(T_c\)</span>. We find there is a jump. So the critical exponent is <span class="math notranslate nohighlight">\(\alpha=0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+C_v=T^2\frac{\partial^2 \mathcal{L}}{\partial T^2}=
+\left\{
+\begin{array}{cc}
+0 &amp;t&gt;0\\
+\frac{a^2}{b T_c} &amp;t\lesssim 0
+\end{array}
+\right.
+\text{.}
+\end{split}\]</div>
+<p>When <span class="math notranslate nohighlight">\(t=0\)</span> and <span class="math notranslate nohighlight">\(h\neq0\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[
+(\cdots)\frac{b}{2}\eta^3=h, h\propto \eta^{\delta}; \delta=3\text{.}
+\]</div>
+<p>For the susceptibility, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\chi_T=\left.\frac{\partial \eta(h)}{\partial h}\right|_T\sim
+\left\{
+\begin{array}{cc}
+\frac{1}{at} \sim t^{-\gamma^+} &amp;t&gt;0,\eta=0
+\frac{1}{-4at} \sim t^{-\gamma^-} &amp;t&lt;0,\eta=\sqrt{\frac{-at}{b}}
+\end{array}
+\right.
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(\gamma^+=\gamma^-=1\)</span>.</p>
+</div>
+<div class="section" id="effects-of-higher-order-terms">
+<h4>Effects of higher order terms<a class="headerlink" href="#effects-of-higher-order-terms" title="Permalink to this headline">#</a></h4>
+<p>Once we include the external field that breaks the symmetry, we should allow terms with odd power of <span class="math notranslate nohighlight">\(\eta\)</span>. In the previous discussion, we found the linear term will tilt the free energy landscape and demonstrate the discontinuous transition across <span class="math notranslate nohighlight">\(h=0\)</span>. However, in the simple free energy expression, we found there will be no discontinuous phase transition when we tune the temperature! It is actually an artifact of the simple free energy structure. It does not mean the Landau theory cannot capture finite temperature discontinuous phase transition. Now we would like to understand what happend if we include higher order terms of <span class="math notranslate nohighlight">\(\eta\)</span>. Will that give us some understanding about the discontinuous phase transition at finite temperature?</p>
+<p>Let’s consider the term proportional with <span class="math notranslate nohighlight">\(\eta^3\)</span>. The corresponding free energy looks like</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L}=at\eta^2+\frac{b}{2}\eta^4-h\eta+C\eta^3\text{.}
+\]</div>
+<p>As before, we would like to identify the configuration that minimize the Landau free energy.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \mathcal{L}}{\partial \eta}=0=2at\eta+2b\eta^3-h+3C\eta^2\text{.}
+\]</div>
+<p>We roughly know the effect of the linear term. So let’s set <span class="math notranslate nohighlight">\(h=0\)</span> and focus on the effect of the <span class="math notranslate nohighlight">\(\eta^3\)</span> term. At the <span class="math notranslate nohighlight">\(h=0\)</span> point, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\eta=
+\left\{
+\begin{array}{c}
+0\\
+-\frac{3C}{4b}\pm\sqrt{\left(\frac{3C}{4b}\right)^2-\frac{at}{b}}\equiv \eta_{\pm}
+\end{array}
+\right.
+\text{.}
+\end{split}\]</div>
+<p>To get real <span class="math notranslate nohighlight">\(\eta_{\pm}\)</span>, we require</p>
+<div class="math notranslate nohighlight">
+\[
+\left(\frac{3C}{4b}\right)^2-\frac{at}{b}\ge0\text{.}
+\]</div>
+<p>That sets a range of the temperture given by the temperature scale <span class="math notranslate nohighlight">\(t^*\)</span>. <span class="math notranslate nohighlight">\(\eta\)</span> is real if</p>
+<div class="math notranslate nohighlight">
+\[
+t&lt;t^*\equiv \frac{b}{a}\left(\frac{3C}{4b}\right)^2 \text{.}
+\]</div>
+<p>That is, only below this temperature, we could have non-trivial local extrema for <span class="math notranslate nohighlight">\(\eta=\eta_{\pm}\)</span>. Otherwise, the only local extrema is the minuma at <span class="math notranslate nohighlight">\(\eta=0\)</span>.</p>
+<p>When we are below the temperature scale <span class="math notranslate nohighlight">\(t^*\)</span>, the two minimum will compete with each other. The critical temperature, <span class="math notranslate nohighlight">\(t_1\)</span>, that the two minimum switch roles, is the point where the discontinuous phase transition happened.</p>
+</div>
+</div>
+</div>
+<div class="section" id="the-landau-free-energy-with-inhomogeneous-order-parameter-field">
+<h2>The Landau free energy with inhomogeneous order parameter field<a class="headerlink" href="#the-landau-free-energy-with-inhomogeneous-order-parameter-field" title="Permalink to this headline">#</a></h2>
+<p>The whole discussion till now focus on the homogeneous case where <span class="math notranslate nohighlight">\(\nabla \eta(\boldsymbol{r})=0\)</span>. If the order parameter field is “piecewise flat”, we can simply add the contribution of the Landau free energy for each position with a local homogeneous order parameter field. So the challenge to go from homogeneous one to the inhomogeneous one is how to deal with the situation when the order parameter changes as a function of space. That is the point where <span class="math notranslate nohighlight">\(\nabla \eta(\boldsymbol{r})\)</span> kicks in. In principle we could have very complicate order parameter field, but let’s assume we would like to focus on the case that the order parameter field varies smoothly on the scale that we care about. What that means is we don’t want to have the field configuration with large <span class="math notranslate nohighlight">\(\nabla \eta(\boldsymbol{r})\)</span> value, a simple way to supress such configuration is to give it a free energy penalty. So our Landau free enegy will look like</p>
+<div class="math notranslate nohighlight">
+\[
+L\left[\eta(\boldsymbol{r})\right]=\int d^d\boldsymbol{r}\frac{\gamma}{2}\left(\nabla \eta(\boldsymbol{r})\right)^2 +\mathcal{L}_0\left[\eta(\boldsymbol{r})\right]\equiv \int d^d\boldsymbol{r}\mathcal{L}^{(g)}\left[\eta(\boldsymbol{r})\right]\text{.}
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\mathcal{L}^{(g)}\)</span> represent the generalized Landau free energy density. Phenomenological wise, we know that <span class="math notranslate nohighlight">\(\gamma\)</span> is related to how difficult it is to modify the order parameter field. When the coupling is stronger, or the range of the interaction, <span class="math notranslate nohighlight">\(R\)</span>, is larger, the order parameter gets stiffer. From the dimension analysis, we should know <span class="math notranslate nohighlight">\(\gamma\propto J\frac{R^2}{a^d}\)</span>.</p>
+</div>
+<div class="section" id="the-functional-integral-representation-of-landau-theory">
+<h2>The functional integral representation of Landau theory<a class="headerlink" href="#the-functional-integral-representation-of-landau-theory" title="Permalink to this headline">#</a></h2>
+<p>Next, we are going to introduce the functional integral representation of Landau theory. In the above phenomenological description, we should notice that the introduction of the <span class="math notranslate nohighlight">\(\frac{\gamma}{2}\left(\nabla \eta(\boldsymbol{r})\right)^2\)</span> term introduces a length scale to the problem. It will become clear that the length scale is the correlation length, <span class="math notranslate nohighlight">\(\xi\)</span>. On the other hand, the microscopic model has an intrinsic length scale given by the lattice constant <span class="math notranslate nohighlight">\(a\)</span>. The differentiation cannot be well defined at the length scale of <span class="math notranslate nohighlight">\(\mathcal{O}(a)\)</span>. So we should be more careful about the description. Especially in this description, all the observable defined on the lattice is now promoted into a field. The techniques that are developed to analyse field like this is part of the big research subject of field theory. Formulating statistical mechanics problem into field theory is sometimes known as “statistical field theory”. One of the first step to describe Landau theory in the statistical field theory framework is the coarse graining process. What exactly do we mean by <span class="math notranslate nohighlight">\(\eta(\boldsymbol{r})\)</span>?</p>
+<div class="section" id="coarse-graining">
+<h3>Coarse graining<a class="headerlink" href="#coarse-graining" title="Permalink to this headline">#</a></h3>
+<p>In the Ising model, we use binary variables to describe the configurations. Consider a random configuration on a two-dimensional lattice, schematically it looks like <a class="reference internal" href="#random-ising"><span class="std std-numref">Fig. 2</span></a>.</p>
+<div class="figure align-default" id="random-ising">
+<a class="reference internal image-reference" href="images/random_conf.pdf"><img alt="images/random_conf.pdf" src="images/random_conf.pdf" style="width: 950px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">A random configuration of binary variables on a two-dimensional lattice.</span><a class="headerlink" href="#random-ising" title="Permalink to this image">#</a></p>
+</div>
+<p>The <a class="reference internal" href="#random-ising"><span class="std std-numref">Fig. 2</span></a> contains the full information about the configuration. However, it is also difficult to work in this representation since everything is discrete and we cannot apply the approximations that we are familiar with in the continuous description (e.g. No Taylor expansion). Can we have some approximate version of <a class="reference internal" href="#random-ising"><span class="std std-numref">Fig. 2</span></a> but that is smooth enough for us to develop continuous description on top of that? The coarse graining process essentially is designed for that. If we replace the exact binary configurations within a length scale using the average value within the length scale, the average values will vary slower on the space. For example, if we took <a class="reference internal" href="#random-ising"><span class="std std-numref">Fig. 2</span></a> and average over a <span class="math notranslate nohighlight">\(5\times 5\)</span> block and define a new variable at the center of such block, the new configuration looks like <a class="reference internal" href="#random-ising-cg-l-5"><span class="std std-numref">Fig. 3</span></a>.</p>
+<div class="figure align-default" id="random-ising-cg-l-5">
+<a class="reference internal image-reference" href="images/random_conf_cg_1_l_5.pdf"><img alt="images/random_conf_cg_1_l_5.pdf" src="images/random_conf_cg_1_l_5.pdf" style="width: 520px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">A random configuration of binary variables on a two-dimensional lattice after we coarse grain on a <span class="math notranslate nohighlight">\(5\times 5\)</span> block. Blue/Red regions are the regions below/above the average value of <span class="math notranslate nohighlight">\(0.5\)</span></span><a class="headerlink" href="#random-ising-cg-l-5" title="Permalink to this image">#</a></p>
+</div>
+<p>Now we can see the variation in space is reduced (at least not of <span class="math notranslate nohighlight">\(O(1)\)</span>). But still, it is not as smooth as we considered as continuous in space.</p>
+<p>We can perform the coarse graining on a bigger block, say <span class="math notranslate nohighlight">\(15\times 15\)</span>, it looks like <a class="reference internal" href="#random-ising-cg-l-15"><span class="std std-numref">Fig. 4</span></a>.</p>
+<div class="figure align-default" id="random-ising-cg-l-15">
+<a class="reference internal image-reference" href="images/random_conf_cg_1_l_15.pdf"><img alt="images/random_conf_cg_1_l_15.pdf" src="images/random_conf_cg_1_l_15.pdf" style="width: 520px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">A random configuration of binary variables on a two-dimensional lattice after we coarse grain on a <span class="math notranslate nohighlight">\(15\times 15\)</span> block.</span><a class="headerlink" href="#random-ising-cg-l-15" title="Permalink to this image">#</a></p>
+</div>
+<p>We can also coarse grain the coarse grained ones, it looks like <a class="reference internal" href="#random-ising-cg-6-l-5"><span class="std std-numref">Fig. 5</span></a> after we iteratively coarse grain the configuration on <span class="math notranslate nohighlight">\(5\times 5\)</span> blocks six times.</p>
+<div class="figure align-default" id="random-ising-cg-6-l-5">
+<a class="reference internal image-reference" href="images/random_conf_cg_6_l_5.pdf"><img alt="images/random_conf_cg_6_l_5.pdf" src="images/random_conf_cg_6_l_5.pdf" style="width: 520px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">A random configuration of binary variables on a two-dimensional lattice after we coarse grain on a <span class="math notranslate nohighlight">\(5\times 5\)</span> block iteratively 6 times.</span><a class="headerlink" href="#random-ising-cg-6-l-5" title="Permalink to this image">#</a></p>
+</div>
+<p>The point is, we loose some information after coarse graining, but the corresponding configuration looks smoother (comparing <a class="reference internal" href="#random-ising"><span class="std std-numref">Fig. 2</span></a>, <a class="reference internal" href="#random-ising-cg-l-15"><span class="std std-numref">Fig. 4</span></a> and <a class="reference internal" href="#random-ising-cg-6-l-5"><span class="std std-numref">Fig. 5</span></a>). So it makes more sense for us to use a continuous function to describe the coarse grained configuration and develop the corresponding field theory.</p>
+<p>But we should also be careful about what have been dropped. After some thinking, we know the size of the block for coarse graining is important.  After we average the spin configurations within that block, the detailed informaiton inside that block is sacrificed. So we need to choose the length scale for the coarse grainning blocks wisely such that we can still access the relevant information of our original problem.</p>
+<p>On the otherhand, we cannot coarse grain our system too little such that the field description does not make sense. If we use <span class="math notranslate nohighlight">\(\Lambda^{-1}\)</span> to represent the length scale of the coarse graining, we would like to have the following relation.</p>
+<div class="math notranslate nohighlight">
+\[
+a\ll \Lambda^{-1}\lesssim \xi(t)
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(\Lambda^{-1}\)</span> is the inverse of the wave vector cutoff which will be convenient for our later discussion. The coarse grained field is constructed by</p>
+<div class="math notranslate nohighlight">
+\[
+m_{\Lambda}(\boldsymbol{r})\equiv \frac{1}{N_{\Lambda}(\boldsymbol{r})} \sum_{i\in \mathcal{B}(\boldsymbol{r},\Lambda)} \langle \sigma_i\rangle\text{.}
+\]</div>
+<p>Now, we would like to discuss the theory of <span class="math notranslate nohighlight">\(m_{\Lambda}(\boldsymbol{r})\)</span>.</p>
+</div>
+<div class="section" id="the-functional-integral-form-of-the-landau-free-energy-and-functional-derivatives">
+<h3>The functional integral form of the Landau free energy and functional derivatives<a class="headerlink" href="#the-functional-integral-form-of-the-landau-free-energy-and-functional-derivatives" title="Permalink to this headline">#</a></h3>
+<p>More specifically, the previous expression of the Landau free energy should be understood with the coarse grained length scale <span class="math notranslate nohighlight">\(\Lambda^{-1}\)</span> and the corresponding Landau free energy can be expressed as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+L\left[m_{\Lambda}(\boldsymbol{r})\right]&amp;=\int d^d\boldsymbol{r}\left\{\mathcal{L}\left[m_{\Lambda}(\boldsymbol{r})\right]+\frac{\gamma}{2}\left(\nabla m_{\Lambda}(\boldsymbol{r})\right)^2\right\}\\
+&amp;\equiv\int d^d\boldsymbol{r}\mathcal{L}^{(g)}\left[m_{\Lambda}(\boldsymbol{r})\right]
+\end{split}\]</div>
+<p>where the dependence on the coarse graining process is shown explicitly.</p>
+<p>The microscopic partition function can be formally related to the Landau free energy through the coarse grain process as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Z&amp;=\sum_{ \left\{\sigma_i\right\}}e^{-\beta H(\left\{\sigma_i\right\})}=\sum_{j}\sum_{m_{\Lambda}(\boldsymbol{x}_j)}\sum_{ \left\{\sigma_i\right\}}\delta_{m_{\Lambda}(\boldsymbol{x}_j)N_{\Lambda}(\boldsymbol{x}_j), \sum_{i\in\mathcal{B}(\boldsymbol{x}_j,\Lambda)}\sigma_i}e^{-\beta H(\left\{\sigma_i\right\})}\\
+&amp;\xrightarrow{\text{continuous limit}} \int \mathcal{D}\left[m_{\Lambda}(\boldsymbol{r})\right] e^{-\beta \int d^d\boldsymbol{r} \mathcal{L}^{(g)}\left[m_{\Lambda}(\boldsymbol{r})\right]}
+\end{split}\]</div>
+<p>Keep writing the dependence on <span class="math notranslate nohighlight">\(\Lambda\)</span> make the expression lengthy. So we usually supress the <span class="math notranslate nohighlight">\(\Lambda\)</span> dependence but we should always remember the existence of the coarse grain length scale in our expression.</p>
+<p>What do we mean by the continuous limit? We take <span class="math notranslate nohighlight">\(a\to0\)</span> but we want to keep the physical volume to be invariant, that is <span class="math notranslate nohighlight">\(V=N(\Omega)a^d\)</span> is kept fixed as we send <span class="math notranslate nohighlight">\(a\to0\)</span>. The formal expression <span class="math notranslate nohighlight">\(\int \mathcal{D}\left[m_{\Lambda}(\boldsymbol{r})\right]\)</span> can therefore beening understood as</p>
+<div class="math notranslate nohighlight">
+\[
+\int \mathcal{D}\left[\eta(\boldsymbol{r})\right]\equiv \lim_{a\to0 , N(\Omega)\to\infty \atop V\to const} \int d{\eta_1}\int d{\eta_2}\cdots \int d{\eta_{N(\Omega)}}\equiv Tr_{ \eta(\boldsymbol{r})}
+\text{.}
+\]</div>
+<p>Here, we use <span class="math notranslate nohighlight">\(\eta(\boldsymbol{r})\)</span> to restore the generality of the theory.
+Usually, we would like to work in the momentum space. For real <span class="math notranslate nohighlight">\(\eta(\boldsymbol{r})\)</span>, the Fourier components are not independent, therefore, we have</p>
+<div class="math notranslate nohighlight">
+\[
+Tr_{ \eta(\boldsymbol{r})}=\int \prod_{\boldsymbol{k}&lt;\Lambda\atop k_z&gt;0} d(Re[\eta_{\boldsymbol{k}}]) d(Im[\eta_{\boldsymbol{k}}])\text{.}
+\]</div>
+<p>The <span class="math notranslate nohighlight">\(k_z&gt;0\)</span> take care of the double counting issue of the constraint due to the realness of the order parameter field. The <span class="math notranslate nohighlight">\(\boldsymbol{k}&lt;\Lambda\)</span> is to remind us that the validity of the field theory is based on a valid coarse grain process.</p>
+<p>Now we would like to do some calculation using the functional integral representation of the Landau free energy. It is useful to know how to make the corresponding generalization by consulting the discrete version of the problem.</p>
+<div class="math notranslate nohighlight">
+\[
+Z_D[\left\{h_i\right\}]\leftrightarrow Z_C[h(\boldsymbol{r})]\text{.}
+\]</div>
+<p>Here</p>
+<div class="math notranslate nohighlight">
+\[
+Z_D[\left\{h_i\right\}]=Tr_{ \left\{\eta_i\right\}}\left\{\exp\left[-\beta(H_{\Omega}-\sum_i h_i\eta_i)\right]\right\}
+\]</div>
+<p>with the lattice Hamiltonian <span class="math notranslate nohighlight">\(H_{\Omega}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+Z_C[h(\boldsymbol{r})]=Tr_{ \eta(\boldsymbol{r})}\left\{\exp\left[-\beta\int d^d\boldsymbol{r} \left\{\mathcal{H}_{\Omega}-h(\boldsymbol{r})\eta(\boldsymbol{r})\right\}\right]\right\}
+\]</div>
+<p>with the Hamiltonian density <span class="math notranslate nohighlight">\(\mathcal{H}_{\Omega}\)</span>.</p>
+<p>The corresponding correlators can be constructed as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\langle \eta_i\eta_j\rangle_D&amp;= \beta^{-2}Z_D[\left\{h_l\right\}]^{-1} \frac{\partial}{\partial h_i}\frac{\partial}{\partial h_j}Z_D[\left\{h_l\right\}]\\
+\langle \eta(\boldsymbol{r}_i)\eta(\boldsymbol{r}_j)\rangle_C&amp;=\beta^{-2}Z_C[h(\boldsymbol{r})]^{-1} \frac{\delta }{\delta h(\boldsymbol{r}_i)}\frac{\delta }{\delta h(\boldsymbol{r}_j)}Z_C[h(\boldsymbol{r})]\text{.}
+\end{split}\]</div>
+<p>Here, we introduce the notion of functional derivative which means the notion of differential is now extended to the functional space. A function <span class="math notranslate nohighlight">\(f\)</span> is a mapping of a vector <span class="math notranslate nohighlight">\(\boldsymbol{r}\)</span> to a value <span class="math notranslate nohighlight">\(f(\boldsymbol{r})\)</span>. A functional <span class="math notranslate nohighlight">\(F\)</span> is a mapping of a function <span class="math notranslate nohighlight">\(f(\boldsymbol{r})\)</span> to a value of <span class="math notranslate nohighlight">\(F[f(\boldsymbol{r})]\)</span>.</p>
+<p>We can therefore again make the correspondence explicit</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{\partial}{\partial x}&amp;\equiv \lim_{\epsilon\to0} \frac{1}{\epsilon} \left[f(x+\epsilon)-f(x)\right]\\
+\frac{\delta}{\delta \eta(\boldsymbol{x}')}&amp;\equiv \lim_{\epsilon\to0}\frac{1}{\epsilon}\left\{F[\eta(\boldsymbol{x})+\epsilon\delta(\boldsymbol{x}'-\boldsymbol{x})]-F[\eta(\boldsymbol{x})]\right\}\text{.}
+\end{split}\]</div>
+<p>Using this definition, we should be able to show</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{\delta}{\delta \eta(\boldsymbol{r})}\left[\int d^d\boldsymbol{r}' \eta(\boldsymbol{r}')\right]=1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\delta}{\delta \eta(\boldsymbol{r})}\left[\eta(\boldsymbol{r}')\right]=\delta(\boldsymbol{r}-\boldsymbol{r}')\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\delta}{\delta \eta(\boldsymbol{r})}\left[\int d^d\boldsymbol{r}' \frac{1}{2}\left[\nabla \eta(\boldsymbol{r}')\right]^2\right]=-\nabla^2 \eta(\boldsymbol{r})\)</span></p></li>
+</ul>
+<p>We will leave the proof for the readers and using them for later discussion.</p>
+<p>Now we should be able to notice the similarity between the discrete discription and the continuous description. So we expect to have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\langle \eta(\boldsymbol{r})\rangle&amp;=-\frac{\delta}{\delta h(\boldsymbol{r})} F[\eta(\boldsymbol{r})]\\
+\chi_T(\boldsymbol{r},\boldsymbol{r}')&amp;=\frac{\delta}{\delta h(\boldsymbol{r}')}\langle\eta(\boldsymbol{r})\rangle=-\frac{\delta}{\delta h(\boldsymbol{r}')}\frac{\delta}{\delta h(\boldsymbol{r})} F[\eta(\boldsymbol{r})]\\
+&amp;=\beta\left[\underbrace{\langle\eta(\boldsymbol{r})\eta(\boldsymbol{r}')\rangle-\langle \eta(\boldsymbol{r})\rangle\langle\eta(\boldsymbol{r}')\rangle}_{\text{connected correlation function}}\right]=\beta G(\boldsymbol{r},\boldsymbol{r}')\text{.}
+\end{split}\]</div>
+<p>Now, let’s see how to calculate the connected correlation function and the susceptibility from the functional representation of the Landau free energy. We copy the free energy here for our convenience.</p>
+<div class="math notranslate nohighlight">
+\[
+L=\int d^d\boldsymbol{r}\left[\frac{\gamma}{2}(\nabla \eta)^2+at\eta^2+\frac{b}{2}\eta^4-h(\boldsymbol{r})\eta(\boldsymbol{r})\right]\text{.}
+\]</div>
+<p>The first step is to find the formal expression of field <span class="math notranslate nohighlight">\(\eta^*(\boldsymbol{r})\)</span> such that <span class="math notranslate nohighlight">\(\left.\frac{\delta L}{\delta \eta(\boldsymbol{r})}\right|_{\eta(\boldsymbol{r})=\eta^*(\boldsymbol{r})}=0\)</span>. The minimization condition gives</p>
+<div class="math notranslate nohighlight">
+\[
+-\gamma \nabla^2\eta^*+2at\eta^*+2b(\eta^*)^3-h(\boldsymbol{r})=0\text{.}
+\]</div>
+<p>With this equaiton, we can derive the formal expression of susceptibility by taking functional derivative with respect to <span class="math notranslate nohighlight">\(h(\boldsymbol{r}')\)</span> on both side of the above equation.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\chi_T(\boldsymbol{r},\boldsymbol{r}')&amp;=\frac{\delta}{\delta h(\boldsymbol{r}')}\eta^*(\boldsymbol{r})\\
+\left[-\gamma\nabla^2+2at+6b(\eta^*)^2\right]\underbrace{\chi_T(\boldsymbol{r},\boldsymbol{r}')}_{\beta G(\boldsymbol{r},\boldsymbol{r}')}&amp;=\delta(\boldsymbol{r}-\boldsymbol{r}')\text{.}
+\end{split}\]</div>
+<p>We can get <span class="math notranslate nohighlight">\(G(\boldsymbol{r},\boldsymbol{r}')\)</span> by solving the above equations.</p>
+<p>In principle, we should solve the differential equation directly and find <span class="math notranslate nohighlight">\(\eta*(\boldsymbol{r})\)</span>. However, we will assume that we are studying the physics near the homogeneous solution.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="syllabus.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Syllabus for Statistical Mechanics (II) – PHYS522000</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="biblio.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Epilogue</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-phases-and-phase-transitions">Motivation – Phases and phase transitions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-field-theory-for-ising-model">Mean-field theory for Ising model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-landau-free-energy">The “Landau free energy”</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-of-order-parameter">Concept of order parameter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-little-bit-of-reverse-engineering">A little bit of reverse engineering…</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-postulates">The postulates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phenomenological-landau-theory-for-the-ising-model">Phenomenological Landau theory for the Ising model</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-the-landau-free-energy">Constructing the Landau free energy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-critical-exponents">The critical exponents</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-of-higher-order-terms">Effects of higher order terms</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-landau-free-energy-with-inhomogeneous-order-parameter-field">The Landau free energy with inhomogeneous order parameter field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-functional-integral-representation-of-landau-theory">The functional integral representation of Landau theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coarse-graining">Coarse graining</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-functional-integral-form-of-the-landau-free-energy-and-functional-derivatives">The functional integral form of the Landau free energy and functional derivatives</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yi-Ping Huang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
